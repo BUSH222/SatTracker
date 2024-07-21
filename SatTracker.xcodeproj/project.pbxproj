@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		195A86992C4D63B700B2023A /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195A86982C4D63B700B2023A /* ScannerViewController.swift */; };
 		19EF10BF2C4BB9A50070AFB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EF10BE2C4BB9A50070AFB4 /* AppDelegate.swift */; };
 		19EF10C12C4BB9A50070AFB4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EF10C02C4BB9A50070AFB4 /* SceneDelegate.swift */; };
 		19EF10C32C4BB9A50070AFB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EF10C22C4BB9A50070AFB4 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		195A86982C4D63B700B2023A /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		19EF10BB2C4BB9A50070AFB4 /* SatTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SatTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19EF10BE2C4BB9A50070AFB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19EF10C02C4BB9A50070AFB4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				19EF10BE2C4BB9A50070AFB4 /* AppDelegate.swift */,
+				195A86982C4D63B700B2023A /* ScannerViewController.swift */,
 				19EF10C02C4BB9A50070AFB4 /* SceneDelegate.swift */,
 				19EF10C22C4BB9A50070AFB4 /* ViewController.swift */,
 				19EF10C42C4BB9A50070AFB4 /* Main.storyboard */,
@@ -144,6 +147,7 @@
 				19EF10C32C4BB9A50070AFB4 /* ViewController.swift in Sources */,
 				19EF10BF2C4BB9A50070AFB4 /* AppDelegate.swift in Sources */,
 				19EF10C12C4BB9A50070AFB4 /* SceneDelegate.swift in Sources */,
+				195A86992C4D63B700B2023A /* ScannerViewController.swift in Sources */,
 				19EF10C92C4BB9A50070AFB4 /* SatTracker.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

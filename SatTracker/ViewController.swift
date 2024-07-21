@@ -37,6 +37,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var targetElevation = 20
     var targetAzimuth = 0
     
+    var passData: [Array<Int>] = []
+    var passDataLoaded: Bool = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
