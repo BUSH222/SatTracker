@@ -9,6 +9,7 @@ import UIKit
 import CoreLocation
 import CoreMotion
 import Foundation
+import AVFoundation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
 
@@ -24,6 +25,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var lm: CLLocationManager!
     var mm: CMMotionManager!
+    var captureSession: AVCaptureSession!
     
     var attitude: CMAttitude?
     var pitch = 0
@@ -55,7 +57,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.didReceiveMemoryWarning()
     }
     
-    // Pitch, Yaw, Roll, Compass heading
+    // helper functions
     
     func degToRad(_ number: Double) -> CGFloat {
         return CGFloat(number * Double.pi / 180)
@@ -66,7 +68,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func getHeadingDifference(h1: Int, h2: Int) -> Int{
-        var h = h1 - h2
+        let h = h1 - h2
         if h > 180{
             return h-360
         } else if h <= -180{
@@ -76,6 +78,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         
     }
+    
+    // Pitch, Yaw, Roll, Compass heading
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         heading = Int(round(Double(newHeading.magneticHeading)))
@@ -87,8 +91,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         roll = Int(round(radToDeg(radians: attitude!.roll)))
         yaw = Int(round(radToDeg(radians: attitude!.yaw)))
         pitch = Int(round(radToDeg(radians: attitude!.pitch)))
-        //print("Roll: \(roll) Pitch: \(pitch) Yaw: \(yaw)")
-        //print("Heading: \(heading) Diff:\(heading+yaw)")
+        // print("Roll: \(roll) Pitch: \(pitch) Yaw: \(yaw)")
+        // print("Heading: \(heading) Diff:\(heading+yaw)")
         // pitch -90 to 90
         // yaw -180 to 180  always starts at 0, dont use, use the compass
         // roll -180 to 180
@@ -105,7 +109,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         let hd = getHeadingDifference(h1: heading, h2: targetAzimuth)
-        print(hd)
+        // print(hd)
         if (hd > 10) {
             AzimuthSlider.setValue(10, animated: true)
         } else if (hd < -10){
@@ -123,7 +127,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 }
          })
      }
+    
 
-
+    @IBAction func scanQR(_ sender: UIButton) {
+    }
+    
 }
 

@@ -44,7 +44,8 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="26"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="scanButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PuN-yY-a35"/>
+                                    <action selector="scanQR:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ih3-5l-8PK"/>
+                                    <segue destination="Gzk-L5-uKR" kind="show" id="puW-dW-3Cm"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="PWb-KN-myX">
@@ -131,9 +132,9 @@
                     </view>
                     <connections>
                         <outlet property="AzimuthSlider" destination="gSX-OM-mE1" id="MqO-Rf-f6j"/>
-                        <outlet property="ElevationSlider" destination="6cs-2n-XrD" id="e48-ff-CL1"/>
                         <outlet property="azimuthLabel" destination="Lbl-iX-1w9" id="bqe-sc-pml"/>
                         <outlet property="elevationLabel" destination="Xzc-se-nIQ" id="ug6-CF-1op"/>
+                        <outlet property="elevationSlider" destination="6cs-2n-XrD" id="KFp-Jo-X5y"/>
                         <outlet property="headingIndicator" destination="FmT-7e-rEC" id="U8z-pC-aV1"/>
                         <outlet property="rollIndicator" destination="RSB-R9-1S6" id="iTA-8j-bj5"/>
                     </connections>
@@ -141,6 +142,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="74.299065420560737" y="3.2397408207343417"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="BiC-rL-gks">
+            <objects>
+                <viewController id="Gzk-L5-uKR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F0E-Bh-T3Z">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="916"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gxG-Ns-CDZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eyK-au-8tf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="krQ-FF-UFE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="850" y="1"/>
         </scene>
     </scenes>
     <resources>
@@ -151,7 +168,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
