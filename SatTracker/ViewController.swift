@@ -35,10 +35,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var roll = 0
     var heading = 0
     
-    var targetElevation = 20
+    var targetElevation = 0
     var targetAzimuth = 0
     
-    var passData: [Array<Int>] = []
+    var passData: [Int:String] = [Int:String]()
     var passDataLoaded: Bool = false
     var aos = 0
     var los = 0
@@ -52,6 +52,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.rollIndicator.anchorPoint = CGPoint(x: 0.5, y: 1)
         
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimestampLabel), userInfo: nil, repeats: true)
+        NotificationCenter.default.addObserver(self, selector: #selector(processPass(_:)), name: Notification.Name("PassData"), object: nil)
         
         lm = CLLocationManager()
         mm = CMMotionManager()
@@ -153,7 +154,27 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @objc func updateTimestampLabel(){
         let currentTimestamp = Int(Date().timeIntervalSince1970) + Int(TimeZone.current.secondsFromGMT())
         timestampLabel.text = "AOS:   \(timestampToDate(timestamp: aos))\nLOS:    \(timestampToDate(timestamp: los))\nLT:        \(timestampToDate(timestamp: currentTimestamp))"
-        print(passDataLoaded)
+        let filteredTimestamp: Int = currentTimestamp % 86400
+        if let val = passData[filteredTimestamp] {
+            let t = val.split(separator: " ")
+            targetAzimuth = Int(t[0])!
+            targetElevation = Int(t[1])!
+        }
+    }
+    
+    @objc func processPass(_ notification: Notification) {
+        if let data = notification.userInfo?["data"] as? String {
+            passDataLoaded = true
+            let temp = data.split(separator: " ")
+            let len = temp.count
+            aos = Int(temp[0])!
+            los = Int(temp[len-3])!
+            for i in stride(from: 0, to: temp.count, by: 3){
+                passData[Int(temp[i])!] = "\(temp[i+1]) \(temp[i+2])"
+            }
+            print(passData)
+            print(data)
+        }
     }
 }
 
