@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SatTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainvc" id="BYZ-38-t0r" customClass="ViewController" customModule="SatTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -114,6 +114,7 @@
                         <outlet property="elevationSlider" destination="6cs-2n-XrD" id="KFp-Jo-X5y"/>
                         <outlet property="headingIndicator" destination="FmT-7e-rEC" id="U8z-pC-aV1"/>
                         <outlet property="rollIndicator" destination="RSB-R9-1S6" id="iTA-8j-bj5"/>
+                        <outlet property="timestampLabel" destination="PXS-Zx-Wqz" id="4pB-UR-4nA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
